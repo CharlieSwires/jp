@@ -55,14 +55,15 @@ public class Main {
 			if ((c >= 'A' && c <= 'Z')||
 					(c >= 'a' && c <= 'z')) {
 				sb.append(c);
+				if (i == inputString.length()-1) {
+					if (sb.length()>0)result.add(sb.toString());
+					sb = new StringBuffer();				
+				}
 			}else {   
 				if (sb.length()>0)result.add(sb.toString());
 				sb = new StringBuffer();
 			}
-			if (i == inputString.length()-1) {
-				if (sb.length()>0)result.add(sb.toString());
-				sb = new StringBuffer();				
-			}
+			
 		}
 		return result;
 	}
